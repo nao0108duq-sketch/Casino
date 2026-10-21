@@ -17,13 +17,13 @@ const listaSimbolos = [
   }
 ];
 
-// Buscamos las imágenes y el botón en el HTML.
+// lista de imagenes-simbolos
 
 const rodillos = document.querySelectorAll(".simbolo");
 const ventanas = document.querySelectorAll(".ventanaRodillo");
 const boton = document.getElementById("boton");
 
-// Escoge una imagen aleatoria para cada espacio.
+// Escoge una imagen aleatoria 
 
 function cambiarSimbolo(imagen) {
   const numero = Math.floor(
@@ -60,7 +60,7 @@ function girarTragamonedas() {
 
     const intervalo = setInterval(function () {
       cambiarSimbolo(imagen);
-    }, 75);
+    }, 70);
 
     intervalos.push(intervalo);
 
