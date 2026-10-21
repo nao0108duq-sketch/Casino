@@ -41,6 +41,16 @@ body {
   object-fit: contain;
 }
 
+#flecha {
+  position: absolute;
+  z-index: 1;
+  top: 38%;
+  left: clamp(0px, 2vw, 24px);
+  display: block;
+  width: clamp(100px, 20vw, 220px);
+  height: auto;
+  object-fit: contain;
+}
 
 #maquina {
   position: absolute;
@@ -173,6 +183,11 @@ body {
   #maquina {
     top: 24vh;
     width: clamp(210px, min(72vw, 64vh), 320px);
+  }
+
+  #flecha {
+    top: 43%;
+    width: clamp(70px, 20vw, 100px);
   }
 
   #boton {
