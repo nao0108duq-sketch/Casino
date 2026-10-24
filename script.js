@@ -22,6 +22,8 @@ const listaSimbolos = [
 const rodillos = document.querySelectorAll(".simbolo");
 const ventanas = document.querySelectorAll(".ventanaRodillo");
 const boton = document.getElementById("boton");
+const bigwin = document.getElementById("bigwin");
+const mensajePerdida = document.getElementById("mensajePerdida");
 
 // Escoge una imagen aleatoria 
 
@@ -45,6 +47,8 @@ function girarTragamonedas() {
   }
 
   boton.disabled = true;
+  bigwin.hidden = true;
+  mensajePerdida.hidden = true;
 
   // Activa el movimiento de los símbolos.
 
@@ -77,6 +81,20 @@ function girarTragamonedas() {
       // Reactiva el botón cuando los tres han parado.
 
       if (indice === rodillos.length - 1) {
+        const conteoSimbolos = new Map();
+
+        rodillos.forEach(function (rodillo) {
+          const cantidad = conteoSimbolos.get(rodillo.alt) || 0;
+          conteoSimbolos.set(rodillo.alt, cantidad + 1);
+        });
+
+        const hayRepetidos = Array.from(conteoSimbolos.values()).some(function (cantidad) {
+          return cantidad >= 2;
+        });
+
+        bigwin.hidden = !hayRepetidos;
+        mensajePerdida.hidden = hayRepetidos;
+
         boton.disabled = false;
       }
 

@@ -56,6 +56,45 @@ body {
   height: auto;
 }
 
+#bigwin {
+  position: absolute;
+  z-index: 3;
+  top: 42%;
+  right: 8%;
+  width: clamp(140px, 22vw, 280px);
+  height: auto;
+  object-fit: contain;
+}
+
+#mensajePerdida {
+  position: absolute;
+  z-index: 3;
+  top: 41.5%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(140px, 22vw, 280px);
+  aspect-ratio: 480 / 282;
+  padding: 12px;
+  border: 3px solid #f7d74e;
+  background: #000;
+  box-shadow: 0 0 12px #ffda4c80, inset 0 0 12px #f7d74e55;
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(16px, 2vw, 27px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  text-align: center;
+  text-shadow: 2px 2px 0 #a20d0d, 0 0 8px #ffda4c;
+}
+
+#bigwin[hidden],
+#mensajePerdida[hidden] {
+  display: none;
+}
+
 
 #pantalla {
   position: absolute;
@@ -172,6 +211,21 @@ body {
   #maquina {
     top: 24vh;
     width: clamp(210px, min(72vw, 64vh), 320px);
+  }
+
+  #bigwin {
+    top: 30%;
+    right: 4%;
+    width: clamp(90px, 28vw, 130px);
+  }
+
+  #mensajePerdida {
+    top: 29.5%;
+    left: 19.5%;
+    width: clamp(90px, 28vw, 130px);
+    padding: 6px;
+    border-width: 2px;
+    font-size: clamp(12px, 3.2vw, 15px);
   }
 
   #boton {
